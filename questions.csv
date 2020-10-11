@@ -1,1 +1,18 @@
-
+1,"En un concierto de rock se reservó para el público un terreno rectangular con unas dimensiones de 100 m por 50 m. Se vendieron todas las entradas y el terreno se llenó de aficionados, todos de pie.",¿Cuál de las siguientes constituye la mejor estimación del número total de asistentes al concierto?,2000,5000,20000,50000,c
+2,La subida al Monte Fuji solo está abierta al público desde el 1 de julio hasta el 27 de agosto de cada año. Alrededor de unas 200.000 personas suben al Monte Fuji durante este periodo de tiempo.,"Como media, ¿alrededor de cuántas personas suben al Monte Fuji cada día?",340,710,3400,7100,c
+3,"La suma de las puntuaciones de Carlos y Ana en un examen es 126. 
+Si la puntuación de Ana fue 3 más que el doble de la de Carlos.",¿Cuál fue la puntuación de Ana en el examen?,44,63,82,85,d
+4,"Los boletos de entrada a un juego de baloncesto para 2 adultos 
+y 3 niños cuestan $67 y para 3 adultos y 2 niños $78.",¿Cuál es el precio del boleto del adulto?,$29.00,$20.00,$15.00,$9.00,b
+5,"Un joven sale de su casa y viaja a 12 millas al norte y luego 16
+ Millas al oeste.",¿A cuántas millas se encuentra de su casa?,20,24,25,26,a
+6,Combinatoria,"¿Cuántos números diferentes hay de tres dígitos, 
+En los que cada dígito sea menor que 5?",15,100,125,500,b
+7,"Dos camiones salen a la vez de puntos opuestos en una carretera. 
+Uno viaja a 40km/h y el otro a 60km/h. Si la distancia entre los 
+Puntos de partida es de 300km",¿Cuántas horas tardarán en encontrarse?,3,3.5,0,6,a
+8,"El promedio de Juan en sus primeras seis pruebas de matemáticas 
+Es 89","¿Qué puntuación necesita en la próxima prueba 
+Para obtener un promedio de 90?",98,96,94,95,d
+9,Jerarquía de operaciones,La expresión 18 + 2^3 / 4 x 2 es igual a:,12,17,22,52,c
+10,Un círculo tiene un radio de 5 cm. ,¿Cuántos centímetros mide su circenferencia?,25pi,10pi,6pi,5pi,b
