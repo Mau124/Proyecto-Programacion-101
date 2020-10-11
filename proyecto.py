@@ -5,6 +5,7 @@ Alumno: Mauricio Andrés Flores Pérez
 Matrícula: A01639917
 
 Descripción del programa:
-ñalsdkjfñalksdjfñlkasjdfjasñdlfkjañlsk
+Programa que realiza preguntas tipo PISA a estudiantes para mejorar su rendimiento en este 
+tipo de examenes. 
 """
 
