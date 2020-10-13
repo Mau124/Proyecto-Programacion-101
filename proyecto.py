@@ -11,33 +11,27 @@ tipo de examenes.
 import random
 import os
 
-def readQuestions(fileName):
-    """Función que lee las preguntas desde un archivo csv y retorna una matriz con ellas"""
+def readFromFile(fileName):
+    """Función que lee los registros de un archivo y devuelve una matriz con ellos"""
 
     # Leemos el archivo
     file = open(fileName, "r")
-    questions = []
+    data = []
     for row in file:
-        questions.append(row)
+        data.append(row)
     file.close()
 
-    # Guardamos las preguntas dentro de una matriz
+    # Guardamos los registros dentro de una matriz
     matrixQuestions = []
-    for row in questions:
+    for row in data:
         matrixQuestions.append(row.strip().split(","))
-    
-    # Imprimiendo la matriz para comprobar que los datos han sido guardados
-    # print(*matrixQuestions, sep="\n")
 
     return matrixQuestions
 
-def saveRecord(name, points):
-    """Función que guarda los datos de un usuario"""
-    # Header del archivo
-    headerUsers = "Name,Points\n"
 
-    with open("userPoints.csv", "w") as outputFile:
-        outputFile.write(headerUsers)
+def saveRecord(name, points, fileName):
+    """Función que guarda los datos de un usuario"""
+    with open(fileName, "a") as outputFile:
         outputFile.write(name+","+str(points)+"\n")
 
 
@@ -51,18 +45,42 @@ def printQuestion(question):
     for i in range(3, len(question)-1):
         print(f"{opt[cont]}) {question[i]}")
         cont += 1
-    
 
-def game():
+
+def printUsersRecords(record):
+    """Función que imprime con formato los registros con nombre y puntos de los usuarios"""
+    os.system("clear") # sistemas unix
+
+    for i in range(len(record)):
+        print(f"\t\t{record[i][0]}\t\t{record[i][1]}")   
+
+    n = input("\n\tPresione enter para continuar: ")
+
+
+def printInstructions():
+    """Función que imprime las instrucciones del juego"""
+    os.system("clear") # sistemas unix
+
+    file = open("instructions.txt", "r")
+    for row in file:
+        print(row, end="")
+    file.close()
+
+    n = input("\n\tPresione enter para continuar: ")
+
+
+def game(inputName, outputName, attemps, ):
     """Función que mantiene una sesión de un juego"""
-    questions = readQuestions("questions.csv")
-    attemps = 2
+
+    questions = readFromFile(inputName)
     auxAttemps = 0
     correct = 0
+    exitGame = False
+
+    name = input("\tColoque un nombre de usuario para comenzar: ")
     
     while len(questions)>0:
-        # os.system("cls") sistemas windows
-        os.system("clear") # sistemas unix
+        os.system("clear") 
 
         # Si ya no quedan intentos, tomamos otra pregunta aleatoria
         if auxAttemps<=0:
@@ -96,7 +114,8 @@ def game():
             accept = input("¿Estás seguro de que deseas salir de la aplicación? s/n: ")
             accept = accept.lower()
             if accept=='s':
-                break;
+                exitGame = True
+                break
 
         # Checha si la opción tecleada por el usuario no existe
         else:
@@ -104,7 +123,48 @@ def game():
 
         next = input("Presione enter para continuar: ")
 
-    print(f"Puntos obtenidos: {correct}")
-    saveRecord("Juanito", correct)
+    if not exitGame:
+        print(f"Puntos obtenidos: {correct}")
+        saveRecord(name, correct, outputName)
 
-game()
+
+def gameMauricio():
+    """Función que inicializa el juego"""
+    """Realizado por: Mauricio Andrés Flores Pérez - A016300917"""
+
+    # Inicializamos las variables
+    opt = 0
+    inputFile = "questions.csv"
+    outputFile = "userPoints.csv"
+
+    while opt!=4:
+        os.system("clear") # sistemas unix
+
+        print("\t------------------------")
+        print("\t-                      -")
+        print("\t-     Juego PISA       -")
+        print("\t-                      -")
+        print("\t------------------------")
+        print("\tBienvenido al juego PISA")
+        print("\tEste juego te ayudará a mejorar tus habilidades en pruebas tipo PISA")
+        print("\tSeleccione una opción del menú:\n")
+
+        print("\t[1]. Iniciar una partida")
+        print("\t[2]. Ver la sala de campeones")
+        print("\t[3]. Ver instrucciones")
+        print("\t[4]. Salir")
+
+        opt = int(input("\tOpción: "))
+
+        if opt==1:
+            game(inputFile, outputFile, 2)
+        elif opt==2:
+            printUsersRecords(readFromFile(outputFile))
+        elif opt==3:
+            printInstructions()
+        elif opt==4:
+            print("\tAdiós. Gracias por participar")
+        else:
+            print("\tLa opción no existe. Intente otra vez")
+
+gameMauricio()

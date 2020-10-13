@@ -1,0 +1,14 @@
+    Instrucciones
+
+    1. Para iniciar una partida, presione la opción Iniciar una partida.
+    2. Al inicio de cada partida se solicitará un nombre de usuario, puede elegir el que ustede desee.
+        Este nombre de usuario se guardará en la sala de ganadores junto con su puntaje.
+    3. Cuando este listo presione la tecla enter para iniciar a jugar
+    4. Tendrá dos intentos para responder cada pregunta
+        Si la pregunta es respondida de manera correcta a la primera, se le sumarán 100 puntos.
+        Si la pregunta es respondida de manera correcta a la segunda, se le sumarán solo 50 puntos.
+        Si la pregunta es respondida de manera erronea y gasta los dos intentos, no se le sumarán puntos.
+    5. Para responder las preguntas, seleccione un inciso: a, b, c, o d.
+    6. Si desea salir del juego, no escriba un inciso, sino la letra s.
+    7. El juego termina cuando hayan pasado 10 preguntas.
+    
