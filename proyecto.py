@@ -49,7 +49,7 @@ def printQuestion(question):
 
 def printUsersRecords(record):
     """Función que imprime con formato los registros con nombre y puntos de los usuarios"""
-    os.system("clear") # sistemas unix
+    os.system("cls") 
 
     for i in range(len(record)):
         print(f"\t\t{record[i][0]}\t\t{record[i][1]}")   
@@ -59,7 +59,7 @@ def printUsersRecords(record):
 
 def printInstructions():
     """Función que imprime las instrucciones del juego"""
-    os.system("clear") # sistemas unix
+    os.system("cls") 
 
     file = open("instructions.txt", "r")
     for row in file:
@@ -80,7 +80,7 @@ def game(inputName, outputName, attemps, ):
     name = input("\tColoque un nombre de usuario para comenzar: ")
     
     while len(questions)>0:
-        os.system("clear") 
+        os.system("cls") 
 
         # Si ya no quedan intentos, tomamos otra pregunta aleatoria
         if auxAttemps<=0:
@@ -138,7 +138,7 @@ def gameMauricio():
     outputFile = "userPoints.csv"
 
     while opt!=4:
-        os.system("clear") # sistemas unix
+        os.system("cls")
 
         print("\t------------------------")
         print("\t-                      -")
